@@ -4,7 +4,7 @@
       <div :class="`logo__wrap ${gender}`">
         <!-- <i class="fab fa-earlybirds logo__icon"></i> -->
         <i class="fas fa-question-circle logo__icon"></i>
-        <span class="logo__fake-eye"></span>
+        <!-- <span class="logo__fake-eye"></span> -->
       </div>
     </div>
   </router-link>
@@ -32,25 +32,27 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #eb7a4f;
-    border-radius: 15px;
+    background-color: #272b34;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #3737a7, -3px -3px 3px #df174d;
+    margin-bottom: 10px;
 
     &.Male {
-      background-color: #557ade;
+      background-color: rgb(55, 55, 167);
     }
 
     &.Female {
-      background-color: #f2507b;
+      background-color: #df174d;
     }
 
     &.Non {
-      background-color: #9764c9;
+      background-color: #5b2394;
     }
   }
 
   .logo__icon {
     z-index: 5;
-    color: #272b34;
+    color: #d1c5f7;
   }
 
   .logo__fake-eye {
