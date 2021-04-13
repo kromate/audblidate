@@ -2,7 +2,8 @@
   <router-link to="/">
     <div class="logo">
       <div :class="`logo__wrap ${gender}`">
-        <i class="fab fa-earlybirds logo__icon"></i>
+        <!-- <i class="fab fa-earlybirds logo__icon"></i> -->
+        <i class="fas fa-question-circle logo__icon"></i>
         <span class="logo__fake-eye"></span>
       </div>
     </div>
