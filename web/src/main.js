@@ -11,7 +11,7 @@ const userId = sessionStorage.getItem('userId')
 const vSocket = new VueSocketIO({
   debug: true,
   // connection: SocketIO(process.env.VUE_APP_SERVER_URL, { query: `id=${userId !== null ? userId : 'null'}` }),
-  connection: SocketIO('http://localhost:4000', { query: `id=${userId !== null ? userId : 'null'}` }),
+  connection: SocketIO('http://localhost:8080', { query: `id=${userId !== null ? userId : 'null'}` }),
 });
 
 createApp(App).use(router).use(vSocket).mount("#app");
