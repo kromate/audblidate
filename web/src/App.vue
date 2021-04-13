@@ -1,6 +1,6 @@
 <template>
-  <div id="app"> 
-    <Preloader v-if="user == false" />
+  <div id="app">
+    <Preloader v-if="loading" />
     <SignUp v-else-if="pendingAccount !== false" :userData="pendingAccount" />
     <router-view v-else :user="user" />
   </div>
@@ -19,6 +19,7 @@ export default {
 
   data() {
     return {
+      loading: false,
       user: false,
       pendingAccount: false,
     };
