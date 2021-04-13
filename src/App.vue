@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Preloader v-if="user === false" />
+    <Preloader v-if="user == false" />
     <SignUp v-else-if="pendingAccount !== false" :userData="pendingAccount" />
     <router-view v-else :user="user" />
   </div>
