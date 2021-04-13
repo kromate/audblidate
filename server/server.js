@@ -11,7 +11,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
   cors: {
-    origin: "*",
+    origin: "http://localhost:8080/",
+    methods: ["GET", "POST"]
   },
 });
 
