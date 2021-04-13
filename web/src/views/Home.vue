@@ -4,10 +4,7 @@
       <Logo />
       <h2 class="title">Joined</h2>
 
-      <div
-        v-if="user !== null && user !== undefined && mySpaces.length !== 0"
-        class="spaces"
-      >
+      <div v-if="user !== null && user !== undefined && mySpaces.length !== 0" class="spaces">
         <Spacebox :key="space.space" v-for="space in mySpaces" :space="space" />
       </div>
 
@@ -24,15 +21,12 @@
     <main class="main">
       <h2 class="title">Spaces</h2>
       <div class="spaces">
-        <Spacebox
-          :key="space.space"
-          v-for="space in otherSpaces"
-          :space="space"
-        />
+        <Spacebox :key="space.space" v-for="space in otherSpaces" :space="space" />
       </div>
     </main>
 
-    <Preloader v-if="spaces.length === 0" />
+    <!-- <Preloader v-if="spaces.length === 0" /> -->
+    <Preloader v-if="false" />
   </div>
 </template>
 
@@ -40,14 +34,14 @@
 import Logo from "../components/Logo";
 import Toolbar from "../components/Toolbar";
 import Spacebox from "../components/Spacebox";
-import Preloader from '../components/Preloader'
+import Preloader from "../components/Preloader";
 export default {
   name: "Home",
   components: {
     Logo,
     Toolbar,
     Spacebox,
-    Preloader
+    Preloader,
   },
   data() {
     return {
@@ -62,8 +56,7 @@ export default {
 
       if (this.user !== null && this.user !== undefined) {
         this.spaces.forEach((space) => {
-          const userInSpace =
-            space.users.filter((item) => item.id === this.user.id).length === 0;
+          const userInSpace = space.users.filter((item) => item.id === this.user.id).length === 0;
           if (userInSpace) {
             otherSpaces.push(space);
           }
@@ -77,11 +70,10 @@ export default {
 
     mySpaces: function () {
       const mySpaces = [];
-      
+
       if (this.user !== null && this.user !== undefined) {
         this.spaces.forEach((space) => {
-          const userInSpace =
-            space.users.filter((item) => item.id === this.user.id).length !== 0;
+          const userInSpace = space.users.filter((item) => item.id === this.user.id).length !== 0;
           if (userInSpace) {
             mySpaces.push(space);
           }

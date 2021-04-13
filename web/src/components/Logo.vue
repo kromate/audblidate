@@ -34,7 +34,7 @@ export default {
     justify-content: center;
     background-color: #272b34;
     border-radius: 5px;
-    box-shadow: 3px 3px 3px #3737a7, -3px -3px 3px #df174d;
+    box-shadow: 3px 3px 3px #e2dadc, -3px -3px 3px #e2dadc;
     margin-bottom: 10px;
 
     &.Male {
