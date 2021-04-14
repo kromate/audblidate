@@ -29,12 +29,18 @@ export default {
   text-align: center;
 
   .logo__wrap:hover {
-    transform: scale(1.2, 1.2);
   }
 
-  /* Fade in the pseudo-element with the bigger shadow */
-  .logo__wrap:hover::after {
-    opacity: 1;
+  @keyframes glow {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.2, 1.2);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
   }
 
   .logo__wrap::after {
@@ -45,7 +51,7 @@ export default {
     height: 100%;
     opacity: 0;
     border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 7px #e2dadc;
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
   .logo__wrap {
@@ -59,10 +65,11 @@ export default {
     justify-content: center;
     background-color: #272b34;
     border-radius: 5px;
-    // box-shadow: 3px 3px 1px #e2dadc, -3px -3px 1px #e2dadc;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 1.5px 1.5px 1px #e2dadc, -1.5px -1.5px 1px #e2dadc;
+    // box-shadow: 0 1px 2px #e2dadcd7;
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     margin-bottom: 10px;
+    animation: glow 2s forwards infinite;
 
     &.Male {
       background-color: rgb(55, 55, 167);
