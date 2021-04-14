@@ -1,12 +1,11 @@
 <template>
   <div class="alert">
     <div class="alert__inner">
-
       <button @click="alertData.state(false)" class="close">
         <span class="close__icon material-icons-outlined">close</span>
       </button>
 
-      <span v-bind:style="{color: alertData.color}" class="alert__icon material-icons-outlined">
+      <span v-bind:style="{ color: alertData.color }" class="alert__icon material-icons-outlined">
         {{ alertData.icon }}
       </span>
 
@@ -60,7 +59,6 @@ export default {
   z-index: 10;
 }
 
-
 .alert__inner {
   width: 40%;
   height: fit-content;
@@ -86,7 +84,6 @@ export default {
     width: 90%;
   }
 }
-
 
 .close {
   position: absolute;
@@ -141,8 +138,8 @@ export default {
   padding: 1rem 0;
   border: none;
   outline: none;
-  background-color: #EB7A4F;
-  color: #FFFFFF;
+  background-color: #d1c5f7;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;

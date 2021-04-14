@@ -123,7 +123,7 @@ body {
   }
 
   .orange {
-    color: #eb7a4f;
+    color: #d1c5f7;
   }
 
   .blue {
