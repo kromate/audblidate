@@ -24,6 +24,26 @@ export default {
   align-items: center;
   width: fit-content;
 
+  .logo__wrap:hover {
+    transform: scale(1.2, 1.2);
+  }
+
+  /* Fade in the pseudo-element with the bigger shadow */
+  .logo__wrap:hover::after {
+    opacity: 1;
+  }
+
+  .logo__wrap::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
   .logo__wrap {
     position: relative;
     font-size: 2.5rem;
@@ -34,7 +54,9 @@ export default {
     justify-content: center;
     background-color: #272b34;
     border-radius: 5px;
-    box-shadow: 3px 3px 1px #e2dadc, -3px -3px 1px #e2dadc;
+    // box-shadow: 3px 3px 1px #e2dadc, -3px -3px 1px #e2dadc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     margin-bottom: 10px;
 
     &.Male {
