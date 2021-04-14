@@ -22,6 +22,7 @@ export default {
 .logo_text {
   font-size: 1.5rem;
   font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
 }
 .logo {
   animation: glow 2s forwards infinite;
