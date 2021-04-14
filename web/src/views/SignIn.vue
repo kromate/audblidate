@@ -11,17 +11,11 @@
 
       <form class="form">
         <button @click.prevent="signInGoogle()" class="form__btn form__btn--extra-pad">
-          Sign in
+          Sign in with Google
         </button>
-        <small class="form__footer"
-          >Powered By
-          <a
-            href="https://firebase.google.com/products/auth"
-            target="_blank"
-            rel="noreferrer noopener"
-            >Google</a
-          ></small
-        >
+        <button @click.prevent="signInTwitter()" class="form__btn form__btn--extra-pad">
+          Sign in with Twitter
+        </button>
       </form>
 
       <Alert v-if="showAlert === true" v-bind:alertData="alertData" />
@@ -30,7 +24,7 @@
 </template>
 
 <script>
-import { signInWithGoogle } from "../firebase/firebase";
+import { signInWithGoogle, signInWithTwitter } from "../firebase/firebase";
 import Template from "../components/FormpageTemplate";
 import Alert from "../components/Alert";
 
@@ -75,6 +69,16 @@ export default {
           this.showError();
         });
     },
+    signInTwitter() {
+      signInWithTwitter()
+        .then((res) => {
+          !res.additionalUserInfo.isNewUser && this.setAlert(true);
+        })
+        .catch((err) => {
+          console.log(err.message);
+          this.showError();
+        });
+    },
 
     showError() {
       (this.alertData = {
@@ -110,6 +114,9 @@ export default {
 <style lang="scss" scoped>
 .form__btn {
   color: #272b34;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 0 1rem;
 }
 .sign-in {
   height: 100%;
