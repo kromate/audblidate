@@ -3,9 +3,11 @@
     <div class="logo">
       <div :class="`logo__wrap ${gender}`">
         <!-- <i class="fab fa-earlybirds logo__icon"></i> -->
-        <i class="fas fa-question-circle logo__icon"></i>
+        <img src="@/assets/logo.svg" alt="logo" class="logo__icon" />
+        <!-- <i class="fas fa-question-circle logo__icon"></i> -->
         <!-- <span class="logo__fake-eye"></span> -->
       </div>
+      <p>Audblidate</p>
     </div>
   </router-link>
 </template>
@@ -23,6 +25,8 @@ export default {
   display: flex;
   align-items: center;
   width: fit-content;
+  flex-direction: column;
+  text-align: center;
 
   .logo__wrap:hover {
     transform: scale(1.2, 1.2);
@@ -50,6 +54,7 @@ export default {
     width: 4rem;
     height: 4rem;
     display: flex;
+    padding: 10px;
     align-items: center;
     justify-content: center;
     background-color: #272b34;
