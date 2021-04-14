@@ -22,31 +22,31 @@ export default {
 
   methods: {
     showSidebar(value) {
-      this.sidebar = value
-    }
+      this.sidebar = value;
+    },
   },
 
   mounted() {
     this.sockets.subscribe("spaceUsers", (data) => {
-      const user = data.users.filter(item => item.id === this.user.id);
+      const user = data.users.filter((item) => item.id === this.user.id);
       this.user = user[0];
     });
-    
-    const lastSpace = this.space
-    sessionStorage.setItem('lastSpace', lastSpace);
+
+    const lastSpace = this.space;
+    localStorage.setItem("lastSpace", lastSpace);
   },
 
   created() {
-    this.$socket.emit("getOldMessages", this.space.toLowerCase())
+    this.$socket.emit("getOldMessages", this.space.toLowerCase());
 
     const isAuthenticated = this.user !== null && this.user !== undefined;
-  
+
     if (!isAuthenticated) {
       this.$router.push("/sign-in");
     } else {
       const user = {
         ...this.user,
-        online: true
+        online: true,
       };
 
       this.user = user;
@@ -67,7 +67,7 @@ export default {
   height: 100%;
   padding: 1.5rem;
 
-   @media screen and (max-width: 900px) {
+  @media screen and (max-width: 900px) {
     flex-wrap: wrap;
     position: relative;
     padding: 0;

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Preloader v-if="loading" />
+    <Preloader v-if="user === false" />
     <SignUp v-else-if="pendingAccount !== false" :userData="pendingAccount" />
     <router-view v-else :user="user" />
   </div>
@@ -34,7 +34,7 @@ export default {
   watch: {
     user() {
       if (this.user) {
-        sessionStorage.setItem("userId", this.user.id);
+        localStorage.setItem("userId", this.user.id);
       }
     },
   },

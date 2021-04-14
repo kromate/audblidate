@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
   cors: {
-    origin: "",
+    origin: "*",
     methods: ["GET", "POST"]
   },
 });
@@ -69,7 +69,7 @@ io.on("connection", (socket) => {
 // set static folder
 app.use(express.static(path.join(__dirname, "./public")));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

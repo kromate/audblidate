@@ -1,11 +1,7 @@
 <template>
   <div class="toolbar">
     <router-link
-      :to="
-        user !== null && user !== undefined && signedOut === false
-          ? '#'
-          : '/sign-in'
-      "
+      :to="user !== null && user !== undefined && signedOut === false ? '#' : '/sign-in'"
       @click="forLogout"
       class="toolbar__icon"
     >
@@ -22,10 +18,7 @@
       <span class="material-icons-outlined"> credit_card </span>
     </router-link>
 
-    <router-link
-      to="/"
-      :class="`toolbar__icon ${active === 'home' && 'toolbar__icon--active'}`"
-    >
+    <router-link to="/" :class="`toolbar__icon ${active === 'home' && 'toolbar__icon--active'}`">
       <span class="material-icons-outlined"> roofing </span>
     </router-link>
     <router-link to="#" @click="forRandom" class="toolbar__icon">
@@ -75,7 +68,7 @@ export default {
     return {
       signedOut: false,
       showAlert: false,
-      lastSpace: sessionStorage.getItem("lastSpace"),
+      lastSpace: localStorage.getItem("lastSpace"),
       alertData: {
         icon: "info",
         color: "#FFCA48",
@@ -115,8 +108,7 @@ export default {
                   title: "Tag Copied",
                   text: `${
                     this.user !== null
-                      ? this.user.username.charAt(0).toUpperCase() +
-                        this.user.username.slice(1)
+                      ? this.user.username.charAt(0).toUpperCase() + this.user.username.slice(1)
                       : "Omo ologo"
                   } wire wire 🙌🏽`,
                   state: this.setAlert,
