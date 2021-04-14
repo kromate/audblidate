@@ -6,19 +6,19 @@
           <span class="material-icons-outlined"> https </span>
         </div>
         <h2 class="title__heading">Heloooo 👋🏼</h2>
-        <p class="title__subheading">Sign in to your birdbox account</p>
+        <p class="title__subheading">Sign in to your Audblidate account</p>
       </div>
 
       <form class="form">
-        <button
-          @click.prevent="signInGoogle()"
-          class="form__btn form__btn--extra-pad"
-        >
+        <button @click.prevent="signInGoogle()" class="form__btn form__btn--extra-pad">
           Sign in
         </button>
         <small class="form__footer"
           >Powered By
-          <a href="https://firebase.google.com/products/auth" target="_blank" rel="noreferrer noopener"
+          <a
+            href="https://firebase.google.com/products/auth"
+            target="_blank"
+            rel="noreferrer noopener"
             >Google</a
           ></small
         >
@@ -108,6 +108,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.form__btn {
+  color: #272b34;
+}
 .sign-in {
   height: 100%;
   width: 100%;
