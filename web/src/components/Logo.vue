@@ -58,11 +58,11 @@ export default {
     margin-bottom: 10px;
 
     &.Male {
-      background-color: rgb(55, 55, 167);
+      background-color: #557ade;
     }
 
     &.Female {
-      background-color: #df174d;
+      background-color: #f2507b;
     }
 
     &.Non {
