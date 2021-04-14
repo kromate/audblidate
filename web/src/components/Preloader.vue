@@ -1,7 +1,8 @@
 <template>
   <div class="preloader">
     <div class="preloader__inner">
-      <Logo />
+      <Logo class="logo" />
+      <p>Audblidate</p>
     </div>
   </div>
 </template>
@@ -18,6 +19,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.logo {
+  animation: glow 2s forwards infinite;
+}
+@keyframes glow {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 .preloader {
   position: fixed;
   left: 0;
