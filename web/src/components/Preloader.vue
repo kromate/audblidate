@@ -2,7 +2,7 @@
   <div class="preloader">
     <div class="preloader__inner">
       <Logo class="logo" />
-      <p>Audblidate</p>
+      <p class="logo_text">Audblidate</p>
     </div>
   </div>
 </template>
@@ -19,6 +19,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.logo_text {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
 .logo {
   animation: glow 2s forwards infinite;
 }

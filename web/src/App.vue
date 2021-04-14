@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <Preloader v-if="user === false" /> -->
-    <Preloader v-if="false" />
+    <Preloader v-if="true" />
     <SignUp v-else-if="pendingAccount !== false" :userData="pendingAccount" />
     <router-view v-else :user="user" />
   </div>
@@ -72,6 +72,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   box-sizing: border-box;
 
@@ -103,7 +104,8 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
